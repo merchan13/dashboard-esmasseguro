@@ -1,0 +1,54 @@
+<div class="table-full">
+  <div class="table-responsive">
+    <table class="table" data-sort="table">
+      <thead>
+        <tr>
+          <th>Solicitud</th>
+          <th>Cliente</th>
+          <th>Seguro(s)</th>
+          <th>Fecha</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @requests.each do |r| %>
+          <tr>
+            <td><a href="#"><%= "##{r.id}" %></a></td>
+            <td><%= r.name %></td>
+            <td><%= r.insurance_type %></td>
+            <td><%= r.created_at.strftime('%d %b %Y') %></td>
+            <td>
+              <button type="button" class="btn btn-sm btn-pill btn-primary">Detalle</button>
+              <button type="button" class="btn btn-sm btn-pill btn-info">Encuestar</button>
+              <button type="button" class="btn btn-sm btn-pill btn-danger">Eliminar</button>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!--
+<div class="text-center">
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="active"><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</div>
+-->
+      </div>
+    </div>
+  </div>

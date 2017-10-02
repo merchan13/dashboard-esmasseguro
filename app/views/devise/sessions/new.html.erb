@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="col-md-4 col-md-offset-4">
+		<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form' }) do |f| %>
+    	<div class="form-group">
+      	<%= f.email_field :email, autofocus: true, class: 'form-control login-input-field', placeholder: "Email"%>
+    	</div>
+
+    	<div class="form-group">
+      	<%= f.password_field :password, autocomplete: 'off', class: 'form-control login-input-field', placeholder: "Contraseña"%>
+    	</div>
+
+    	<%= f.submit  t('.inicar_sesion', default: 'Iniciar sesión'), class: 'btn btn-primary login-button' %>
+  	<% end %>
+	</div>
+
+  <br>
+
+  <%#= link_to t('.olvido_su_contraseña', default: '¿Olvidó su contraseña?'), new_password_path(resource_name) %><br />
+</div>

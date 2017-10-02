@@ -31,6 +31,8 @@ gem 'rest-client'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 
+gem 'seed_dump'
+
 # Users
 gem 'bcrypt'
 gem 'devise'

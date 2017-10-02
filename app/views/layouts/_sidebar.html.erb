@@ -1,0 +1,58 @@
+<div class="col-sm-3 sidebar">
+        <nav class="sidebar-nav">
+          <div class="sidebar-header">
+            <button class="nav-toggler nav-toggler-sm sidebar-toggler" type="button" data-toggle="collapse" data-target="#nav-toggleable-sm">
+              <span class="sr-only">Toggle nav</span>
+            </button>
+            <a class="sidebar-brand img-responsive" href="../index.html">
+              <span class="icon icon-leaf sidebar-brand-icon"></span>
+            </a>
+          </div>
+
+          <div class="collapse nav-toggleable-sm" id="nav-toggleable-sm">
+            <form class="sidebar-form">
+              <input class="form-control" type="text" placeholder="Buscar...">
+              <button type="submit" class="btn-link">
+                <span class="icon icon-magnifying-glass"></span>
+              </button>
+            </form>
+            <ul class="nav nav-pills nav-stacked">
+
+              <li class="nav-header">Dashboards</li>
+
+              <li class="<%= "active" if params[:controller] == 'pages' %>"><%= link_to 'General',  root_path %></li>
+              <li class="<%= "active" if params[:controller] == 'insurance_requests' %>"><%= link_to 'Solicitudes',  insurance_requests_path %></li>
+              <li class="<%= "active" if params[:controller] == 'ratings' %>"><%= link_to 'Encuestas',  ratings_path %></li>
+              <li class="<%= "active" if params[:controller] == 'brokers' %>"><%= link_to 'Corredores',  root_path %></li>
+
+              <li class="nav-header">Otros</li>
+              <li ><a href="#">Perfil</a></li>
+              <li><a href="#docsModal" data-toggle="modal">Example modal</a></li>
+              <li><%= link_to 'Cerrar sesión',  destroy_user_session_path, method: :delete, style: 'background: #e64759; color: white; font-weight: 500' %></li>
+
+            </ul>
+            <hr class="visible-xs m-t">
+          </div>
+        </nav>
+      </div>
+      <div class="col-sm-9 content">
+        <div class="dashhead">
+          <div class="dashhead-titles">
+            <h6 class="dashhead-subtitle">Dashboards</h6>
+            <h2 class="dashhead-title">
+              <%=
+                if params[:controller] == 'pages'
+                  "General"
+                elsif params[:controller] == 'insurance_requests'
+                  "Solicitudes de seguros"
+                elsif params[:controller] == 'ratings'
+                  "Encuestas de servicio"
+                elsif params[:controller] == 'brokers'
+                  "Corredores activos"
+                end
+                %>
+            </h2>
+          </div>
+        </div>
+
+<hr class="m-t">

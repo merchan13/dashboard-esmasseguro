@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html>
- 	<head>
-    	<title>Dashboard</title>
-    	<%= csrf_meta_tags %>
+	<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
 
-    	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  	<title>Dashboard</title>
 
-    	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
 
-  	</head>
+    <%= stylesheet_link_tag    'application', media: 'all'%>
 
-  	<body>
-		<%= yield %>
+    <%= javascript_include_tag 'application' %>
+
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+  	<div class="container">
+    	<div class="row">
+    		<%= render partial: 'layouts/sidebar' %>
+
+    		<%= yield %>
+    	</div>
+    </div>
 	</body>
 
 </html>
