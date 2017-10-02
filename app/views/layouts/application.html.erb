@@ -30,7 +30,13 @@
   <body>
   	<div class="container">
     	<div class="row">
-    		<%= render partial: 'layouts/sidebar' %>
+
+      <% puts params[:controller] %>
+      <% puts params[:action] %>
+
+        <% if !(params[:controller] == 'devise/sessions' && params[:action] == 'new') %>
+          <%= render partial: 'layouts/sidebar' %>
+        <% end %>
 
     		<%= yield %>
     	</div>
