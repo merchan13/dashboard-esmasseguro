@@ -34,7 +34,7 @@
       <% puts params[:controller] %>
       <% puts params[:action] %>
 
-        <% if !(params[:controller] == 'devise/sessions' && params[:action] == 'new') %>
+        <% if params[:controller] != 'devise/sessions' %>
           <%= render partial: 'layouts/sidebar' %>
         <% end %>
 
